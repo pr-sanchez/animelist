@@ -1,0 +1,110 @@
+.loading {
+  margin-top: 15%;
+  position: fixed;
+  z-index: 1;
+}
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+  background-color: rgb(84, 88, 90);
+  grid-gap: 5px;
+  justify-content: center;
+}
+.gridItem {
+  background-color: rgba(255, 255, 255, 0.8);
+  /* border: 1px solid rgba(0, 0, 0, 0.8); */
+  /* padding: 20px; */
+  /* font-size: 30px; */
+  grid-row-end: span 1;
+  /* text-align: center; */
+}
+.gridItem2 {
+  background-color: rgba(255, 255, 255, 0.8);
+  /* border: 1px solid rgba(0, 0, 0, 0.8); */
+  /* padding: 20px; */
+  /* font-size: 30px; */
+  grid-row-end: span 2;
+}
+.gridItem3 {
+  background-color: rgba(255, 255, 255, 0.8);
+  /* border: 1px solid rgba(0, 0, 0, 0.8); */
+  /* padding: 20px; */
+  /* font-size: 30px; */
+  grid-row-end: span 3;
+}
+.circle {
+  width: 100px;
+  height: 100px;
+  padding: 1rem;
+  position: relative;
+  background: none;
+  padding: 3px;
+}
+.circleAnimated {
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  padding: 1rem;
+  position: relative;
+  background: linear-gradient(110deg, rgb(0, 66, 106) 33%, rgba(0, 0, 0, 0) 33%),
+    linear-gradient(110deg, #9adbe8 34%, #2dccd3 34%);
+  background-size: 400% 400%;
+  padding: 3px;
+  -webkit-animation: Gradient 20s ease infinite, rotating 2s linear infinite;
+  -moz-animation: Gradient 20s ease infinite, rotating 2s linear infinite;
+  animation: Gradient 20s ease infinite, rotating 2s linear infinite;
+  /* -ms-animation: 
+  -o-animation:  */
+}
+
+.innerBox {
+  background: rgb(0, 134, 214, 0.5);
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  padding: 2rem;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 10% 10%;
+  }
+
+  50% {
+    background-position: 50% 50%;
+  }
+
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
