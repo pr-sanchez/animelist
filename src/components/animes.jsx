@@ -166,8 +166,8 @@ class Animes extends Component {
                           className={this.animeInformation(anime.data.id)}
                           style={
                             idSelectedAnime === anime.data.id
-                              ? { visibility: "visible" }
-                              : { visibility: "hidden" }
+                              ? { display: "block" }
+                              : { display: "none" }
                           }
                         >
                           <b>Rating:</b> {anime.data.attributes.averageRating}
@@ -176,14 +176,17 @@ class Animes extends Component {
                         </h4>
                       </Fragment>
                     )}
-                    {anime.data.attributes.posterImage.small !== undefined && (
-                      <img
-                        src={anime.data.attributes.posterImage.small}
-                        alt="Cover image"
-                        width={"80%"}
-                        height={"auto"}
-                      />
-                    )}
+                    <div className="animeBody">
+                      {anime.data.attributes.posterImage.small !==
+                        undefined && (
+                        <img
+                          src={anime.data.attributes.posterImage.small}
+                          alt="Cover image"
+                          width={"100%"}
+                          height={"100%"}
+                        />
+                      )}
+                    </div>
                   </div>
                 );
               } else {

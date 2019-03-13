@@ -5,7 +5,7 @@
 }
 .gridContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   background-color: rgb(84, 88, 90);
   grid-gap: 10px;
   justify-content: center;
@@ -89,6 +89,9 @@
   transition-duration: 0.5s;
   transition: border-left border-right border-top;
   cursor: pointer;
+}
+.animeBody {
+  margin-top: 0px;
 }
 /* .miniCircle {
   position: absolute;

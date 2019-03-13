@@ -6,9 +6,7 @@ class App extends Component {
     count: 0
   };
   handleCount = count => {
-    if (count > this.state.count) {
-      this.setState({ count });
-    }
+    this.setState({ count });
   };
   render() {
     return (
