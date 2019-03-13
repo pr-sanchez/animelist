@@ -4,7 +4,11 @@ const Navbar = () => (
     <a className="navbar-brand" href="#">
       AnimeList
     </a>
-    <a className="nav-link" href="https://github.com/pr-sanchez">
+    <a
+      className="nav-link"
+      target="_blank"
+      href="https://github.com/pr-sanchez/animelist"
+    >
       Github
     </a>
   </nav>
