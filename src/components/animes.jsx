@@ -62,7 +62,6 @@ class Animes extends Component {
             animes: [animes, ...this.state.animes]
           });
         };
-
         if (i === 10) clearInterval(this.random);
         else {
           let id = Math.ceil(Math.random() * (9999 - 1) - 1).toString();
@@ -141,63 +140,29 @@ class Animes extends Component {
         {/* <p>There are {animes.length} animes i n the database</p> */}
 
         <div className="gridContainer">
+          {/* <div className="gridItem" />
+          <div className="gridItem2" />
+          <div className="gridItem3" /> */}
           {animes &&
             animes.map(anime => {
               if (anime.data !== undefined) {
-                if (anime.data.id % 5 === 0) {
-                  return (
-                    <div className="gridItem" key={anime.data.id}>
-                      {anime.data.attributes.canonicalTitle !== undefined && (
-                        <h3>{anime.data.attributes.canonicalTitle}</h3>
-                      )}
-                      {anime.data.attributes.posterImage.large !==
-                        undefined && (
-                        <img
-                          src={anime.data.attributes.posterImage.large}
-                          alt="Cover image"
-                          width={"100%"}
-                          height={"100%"}
-                        />
-                      )}
-                    </div>
-                  );
-                }
-                if (anime.data.id % 2 === 0) {
-                  return (
-                    <div className="gridItem2" key={anime.data.id}>
-                      {anime.data.attributes.canonicalTitle !== undefined && (
-                        <h3>{anime.data.attributes.canonicalTitle}</h3>
-                      )}
-                      {anime.data.attributes.posterImage.large !==
-                        undefined && (
-                        <img
-                          src={anime.data.attributes.posterImage.large}
-                          alt="Cover image"
-                          width={"100%"}
-                          height={"100%"}
-                        />
-                      )}
-                    </div>
-                  );
-                }
-                if (anime.data.id % 3 === 0) {
-                  return (
-                    <div className="gridItem3" key={anime.data.id}>
-                      {anime.data.attributes.canonicalTitle !== undefined && (
-                        <h3>{anime.data.attributes.canonicalTitle}</h3>
-                      )}
-                      {anime.data.attributes.posterImage.large !==
-                        undefined && (
-                        <img
-                          src={anime.data.attributes.posterImage.large}
-                          alt="Cover image"
-                          width={"100%"}
-                          height={"100%"}
-                        />
-                      )}
-                    </div>
-                  );
-                }
+                return (
+                  <div className="gridItem" key={anime.data.id}>
+                    {anime.data.attributes.canonicalTitle !== undefined && (
+                      <h3 className="animeTitle">
+                        {anime.data.attributes.canonicalTitle}
+                      </h3>
+                    )}
+                    {anime.data.attributes.posterImage.small !== undefined && (
+                      <img
+                        src={anime.data.attributes.posterImage.small}
+                        alt="Cover image"
+                        width={"80%"}
+                        height={"auto"}
+                      />
+                    )}
+                  </div>
+                );
               } else {
                 return null;
               }
@@ -226,7 +191,7 @@ favoritesCount: 4162
 nextRelease: null
 nsfw: false
 popularityRank: 21
-posterImage: {tiny: "https://media.kitsu.io/anime/poster_images/1/tiny.jpg?1431697256", small: "https://media.kitsu.io/anime/poster_images/1/small.jpg?1431697256", medium: "https://media.kitsu.io/anime/poster_images/1/medium.jpg?1431697256", large: "https://media.kitsu.io/anime/poster_images/1/large.jpg?1431697256", original: "https://media.kitsu.io/anime/poster_images/1/original.jpg?1431697256", …}
+posterImage: {tiny: "https://media.kitsu.io/anime/poster_images/1/tiny.jpg?1431697256", small: "https://media.kitsu.io/anime/poster_images/1/small.jpg?1431697256", medium: "https://media.kitsu.io/anime/poster_images/1/medium.jpg?1431697256", small: "https://media.kitsu.io/anime/poster_images/1/small.jpg?1431697256", original: "https://media.kitsu.io/anime/poster_images/1/original.jpg?1431697256", …}
 ratingFrequencies: {2: "2194", 3: "43", 4: "366", 5: "20", 6: "132", 7: "23", 8: "2119", 9: "29", 10: "510", 11: "36", 12: "1858", 13: "91", 14: "4993", 15: "207", 16: "6019", 17: "368", 18: "7274", 19: "360", 20: "24899"}
 ratingRank: 46
 showType: "TV"

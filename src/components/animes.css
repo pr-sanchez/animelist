@@ -6,33 +6,16 @@
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(200px, auto);
   background-color: rgb(84, 88, 90);
-  grid-gap: 5px;
+  grid-gap: 10px;
   justify-content: center;
 }
 .gridItem {
-  background-color: rgba(255, 255, 255, 0.8);
-  /* border: 1px solid rgba(0, 0, 0, 0.8); */
-  /* padding: 20px; */
-  /* font-size: 30px; */
-  grid-row-end: span 1;
-  /* text-align: center; */
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  text-align: center;
 }
-.gridItem2 {
-  background-color: rgba(255, 255, 255, 0.8);
-  /* border: 1px solid rgba(0, 0, 0, 0.8); */
-  /* padding: 20px; */
-  /* font-size: 30px; */
-  grid-row-end: span 2;
-}
-.gridItem3 {
-  background-color: rgba(255, 255, 255, 0.8);
-  /* border: 1px solid rgba(0, 0, 0, 0.8); */
-  /* padding: 20px; */
-  /* font-size: 30px; */
-  grid-row-end: span 3;
-}
+
 .circle {
   width: 100px;
   height: 100px;
@@ -64,6 +47,16 @@
   width: 100px;
   height: 100px;
   padding: 2rem;
+}
+.animeTitle {
+  background: rgb(0, 147, 178);
+  border-bottom: 2px solid black;
+  margin-bottom: 0px;
+  font-size: 0.9rem;
+  padding: 10px;
+  font-weight: bolder;
+  text-shadow: 2px 2px 4px #fff;
+  color: #000;
 }
 
 @-webkit-keyframes Gradient {
