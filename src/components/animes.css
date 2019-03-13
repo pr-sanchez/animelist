@@ -16,40 +16,40 @@
   text-align: center;
 }
 
-.circle {
+/* .circle {
   width: 100px;
   height: 100px;
   padding: 1rem;
   position: relative;
   background: none;
   padding: 3px;
-}
+} */
 .circleAnimated {
   border-radius: 100%;
-  width: 100px;
-  height: 100px;
+  width: 104px;
+  height: 104px;
   padding: 1rem;
   position: relative;
   background: linear-gradient(110deg, rgb(0, 66, 106) 33%, rgba(0, 0, 0, 0) 33%),
     linear-gradient(110deg, #9adbe8 34%, #2dccd3 34%);
   background-size: 400% 400%;
-  padding: 3px;
-  -webkit-animation: Gradient 20s ease infinite, rotating 2s linear infinite;
-  -moz-animation: Gradient 20s ease infinite, rotating 2s linear infinite;
-  animation: Gradient 20s ease infinite, rotating 2s linear infinite;
+  padding: 2px;
+  -webkit-animation: Gradient 12s ease infinite, rotating 3s linear infinite;
+  /* -moz-animation: Gradient 20s ease infinite, rotating 2s linear infinite;
+  animation: Gradient 20s ease infinite, rotating 2s linear infinite; */
   /* -ms-animation: 
   -o-animation:  */
 }
 
-.innerBox {
-  background: rgb(0, 134, 214, 0.5);
+.innerCircle {
+  background: rgba(0, 134, 214, 0.3);
   border-radius: 100%;
   width: 100px;
   height: 100px;
   padding: 2rem;
 }
 .animeTitle {
-  background: rgb(0, 147, 178);
+  background: rgb(0 163 224);
   border-bottom: 2px solid black;
   margin-bottom: 0px;
   font-size: 0.9rem;
@@ -58,6 +58,49 @@
   text-shadow: 2px 2px 4px #fff;
   color: #000;
 }
+.animeInformation {
+  background: rgb(153, 214, 234);
+  border-right-style: dotted;
+  border-bottom-style: dotted;
+  border-left-style: dotted;
+  font-size: 0.7rem;
+  padding: 10px 0px 2px 0px;
+  color: #000;
+  transition: all 700ms;
+}
+.triangleDown {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid rgba(0, 0, 0, 0.9);
+  transition-duration: 0.5s;
+  transition: border-left border-right border-top;
+  cursor: pointer;
+}
+.triangleDownVanishing {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid rgba(0, 0, 0, 0.9);
+  transition-duration: 0.5s;
+  transition: border-left border-right border-top;
+  cursor: pointer;
+}
+/* .miniCircle {
+  position: absolute;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  border: 1px solid #000;
+  background: #000;
+  width: 8px;
+  height: 8px;
+  transition: width 1s ease-out 0s;
+} */
 
 @-webkit-keyframes Gradient {
   0% {

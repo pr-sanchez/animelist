@@ -4,38 +4,13 @@ import "./animes.css";
 const initialState = {
   animes: [],
   listIds: [],
-  clicked: false
+  clicked: false,
+  idSelectedAnime: ""
 };
 class Animes extends Component {
   constructor() {
     super();
     this.state = initialState;
-  }
-
-  async componentDidMount() {
-    // this.random = setInterval(() => {
-    //   for (let i = 0; i < 10; i++) {
-    //     const setIds = async id => {
-    //       const animes = await animeService.getAnimes(id);
-    //       this.setState({
-    //         animes: [animes, ...this.state.animes]
-    //       });
-    //     };
-    //     if (i === 9) clearInterval(this.random);
-    //     else {
-    //       let id = Math.ceil(Math.random() * (999 - 1) - 1);
-    //       setIds(id);
-    //     }
-    //   }
-    // }, 500);
-    // const animes = animeService.getAnimes(this.state.random);
-    // this.setState({ ...this.state.animes, animes });
-    // const episodes = await animeService.getEpisodes(1);
-    // // episodes.attributes.map(attribute => {
-    // // });
-    // episodes.data.map(episode => {
-    //   console.log(episode);
-    // });
   }
 
   // async getEpisodes(id) {
@@ -52,20 +27,26 @@ class Animes extends Component {
   handleClear = () => {
     this.setState(initialState);
   };
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.animes.length !== this.state.animes.length) {
+      this.props.handleCount(this.state.animes.length);
+    }
+  }
   handleRandom = () => {
     this.handleClick();
     this.random = setInterval(() => {
       for (let i = 0; i < 11; i++) {
         const setIds = async id => {
           const animes = await animeService.getAnimes(id);
-          this.setState({
-            animes: [animes, ...this.state.animes]
-          });
+          if (animes.data) {
+            this.setState({
+              animes: [animes, ...this.state.animes]
+            });
+          }
         };
         if (i === 10) clearInterval(this.random);
         else {
           let id = Math.ceil(Math.random() * (9999 - 1) - 1).toString();
-          console.log(id);
           this.setState(
             {
               listIds: [id, ...this.state.listIds]
@@ -90,23 +71,40 @@ class Animes extends Component {
           this.setState({
             clicked: false
           });
-        }, 5000);
+        }, 2800);
       }
     );
   };
+  handleToggle = id => {
+    if (this.state.idSelectedAnime === id) {
+      this.setState({
+        idSelectedAnime: ""
+      });
+    } else {
+      this.setState({
+        idSelectedAnime: id
+      });
+    }
+  };
+
+  animeInformation = id => {
+    if (this.state.idSelectedAnime === id) {
+      return "animeInformation";
+    }
+  };
   render() {
-    const { animes, clicked } = this.state;
+    const { animes, clicked, idSelectedAnime } = this.state;
     if (animes.data === 0) {
       return <h2>The are no animes in the database</h2>;
     }
-    // console.log(animes);
+    console.log(animes);
     return (
       <Fragment>
         <div className="d-flex justify-content-center ">
           <div className="loading">
             {clicked && (
               <div className="circle circleAnimated">
-                <div className="innerBox" />
+                <div className="innerCircle" />
               </div>
             )}
           </div>
@@ -140,20 +138,43 @@ class Animes extends Component {
         {/* <p>There are {animes.length} animes i n the database</p> */}
 
         <div className="gridContainer">
-          {/* <div className="gridItem" />
-          <div className="gridItem2" />
-          <div className="gridItem3" /> */}
           {animes &&
             animes.map(anime => {
               if (anime.data !== undefined) {
                 return (
                   <div className="gridItem" key={anime.data.id}>
                     {anime.data.attributes.canonicalTitle !== undefined && (
-                      <h3 className="animeTitle">
-                        {anime.data.attributes.canonicalTitle}
-                        <br />
-                        {anime.data.attributes.titles.ja_jp}
-                      </h3>
+                      <Fragment>
+                        <h3 className="animeTitle">
+                          {anime.data.attributes.canonicalTitle}
+                          <br />
+                          {anime.data.attributes.titles.ja_jp}
+                        </h3>
+                        <div className="d-flex justify-content-center">
+                          <div
+                            className={
+                              idSelectedAnime === anime.data.id
+                                ? "triangleDownVanishing"
+                                : "triangleDown"
+                            }
+                            onClick={() => {
+                              this.handleToggle(anime.data.id);
+                            }}
+                          />
+                        </div>
+                        <h4
+                          className={this.animeInformation(anime.data.id)}
+                          style={
+                            idSelectedAnime === anime.data.id
+                              ? { visibility: "visible" }
+                              : { visibility: "hidden" }
+                          }
+                        >
+                          <b>Rating:</b> {anime.data.attributes.averageRating}
+                          <br />
+                          <b>Age:</b> {anime.data.attributes.ageRatingGuide}
+                        </h4>
+                      </Fragment>
                     )}
                     {anime.data.attributes.posterImage.small !== undefined && (
                       <img
