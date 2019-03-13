@@ -151,6 +151,8 @@ class Animes extends Component {
                     {anime.data.attributes.canonicalTitle !== undefined && (
                       <h3 className="animeTitle">
                         {anime.data.attributes.canonicalTitle}
+                        <br />
+                        {anime.data.attributes.titles.ja_jp}
                       </h3>
                     )}
                     {anime.data.attributes.posterImage.small !== undefined && (
