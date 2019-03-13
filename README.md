@@ -9,6 +9,10 @@ For my personal challenge, i decided to code an anime "search engine" applicatio
 As i said, the project its coded by the create-react-app boilerplate and using the basics of React.JS, it works with the [kitsu](https://kitsu.docs.apiary.io/) API's, the documentación is well done and is really extensive, if you want to code your own anime application, please use their API's!
 no, i mean, seriously, stop reading and go check em' out.
 
+# App
+
+[View online](https://pr-sanchez.github.io/animelist/)
+
 # Collaboration
 
 Bugs? Pitfalls? Feel free to fork and make request changes, i will check it out
