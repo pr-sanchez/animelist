@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/animelist/static/media/fontawesome-webfont.af7ae505.woff2"
   },
   {
-    "revision": "c498f5748b69614e63fd",
-    "url": "/animelist/static/css/main.fc8c74c2.chunk.css"
+    "revision": "b8a3196829b674e12c92",
+    "url": "/animelist/static/css/main.18a50b08.chunk.css"
   },
   {
     "revision": "ad8e47aeb158979d2448",
@@ -20,8 +20,8 @@ self.__precacheManifest = [
     "url": "/animelist/static/js/2.25bfd1b7.chunk.js"
   },
   {
-    "revision": "c498f5748b69614e63fd",
-    "url": "/animelist/static/js/main.97a4a20e.chunk.js"
+    "revision": "b8a3196829b674e12c92",
+    "url": "/animelist/static/js/main.dd4ea123.chunk.js"
   },
   {
     "revision": "fee66e712a8a08eef5805a46892932ad",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/animelist/static/css/2.347418bc.chunk.css"
   },
   {
-    "revision": "3b199b001ddd7a0e6f4d5e8d9adb2f32",
+    "revision": "d6fc3c992dbecce7e10177fc5674fa06",
     "url": "/animelist/index.html"
   }
 ];

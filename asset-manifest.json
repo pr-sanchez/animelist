@@ -1,16 +1,16 @@
 {
-  "main.css": "/animelist/static/css/main.fc8c74c2.chunk.css",
-  "main.js": "/animelist/static/js/main.97a4a20e.chunk.js",
-  "main.js.map": "/animelist/static/js/main.97a4a20e.chunk.js.map",
+  "main.css": "/animelist/static/css/main.18a50b08.chunk.css",
+  "main.js": "/animelist/static/js/main.dd4ea123.chunk.js",
+  "main.js.map": "/animelist/static/js/main.dd4ea123.chunk.js.map",
   "runtime~main.js": "/animelist/static/js/runtime~main.f37d6ac7.js",
   "runtime~main.js.map": "/animelist/static/js/runtime~main.f37d6ac7.js.map",
   "static/css/2.347418bc.chunk.css": "/animelist/static/css/2.347418bc.chunk.css",
   "static/js/2.25bfd1b7.chunk.js": "/animelist/static/js/2.25bfd1b7.chunk.js",
   "static/js/2.25bfd1b7.chunk.js.map": "/animelist/static/js/2.25bfd1b7.chunk.js.map",
   "index.html": "/animelist/index.html",
-  "precache-manifest.7a8ba79f60e16446dfa84474570164bf.js": "/animelist/precache-manifest.7a8ba79f60e16446dfa84474570164bf.js",
+  "precache-manifest.0befcfb11adaa02f4bc1d8d93d150402.js": "/animelist/precache-manifest.0befcfb11adaa02f4bc1d8d93d150402.js",
   "service-worker.js": "/animelist/service-worker.js",
   "static/css/2.347418bc.chunk.css.map": "/animelist/static/css/2.347418bc.chunk.css.map",
-  "static/css/main.fc8c74c2.chunk.css.map": "/animelist/static/css/main.fc8c74c2.chunk.css.map",
+  "static/css/main.18a50b08.chunk.css.map": "/animelist/static/css/main.18a50b08.chunk.css.map",
   "static/media/font-awesome.css": "/animelist/static/media/fontawesome-webfont.fee66e71.woff"
 }
