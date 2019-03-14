@@ -117,7 +117,7 @@ class Animes extends Component {
             <div className="col">
               <button
                 onClick={() => this.handleRandom()}
-                className="btn btn-primary btn-lg btn-block"
+                className="btn btn-primary btn-lg btn-block "
                 disabled={clicked ? true : false}
               >
                 Search 10 random
@@ -127,7 +127,7 @@ class Animes extends Component {
               <button
                 onClick={() => this.handleClear()}
                 disabled={clicked ? true : false}
-                className="btn btn-secondary btn-lg btn-block"
+                className="btn btn-secondary btn-lg btn-block "
               >
                 Clear results
               </button>
@@ -145,12 +145,40 @@ class Animes extends Component {
                   <div className="gridItem" key={anime.data.id}>
                     {anime.data.attributes.canonicalTitle !== undefined && (
                       <Fragment>
-                        <h3 className="animeTitle">
-                          {anime.data.attributes.canonicalTitle}
-                          <br />
-                          {anime.data.attributes.titles.ja_jp}
-                        </h3>
-                        <div className="d-flex justify-content-center">
+                        <div className="animeBody">
+                          {anime.data.attributes.posterImage.small !==
+                            undefined && (
+                            <img
+                              src={anime.data.attributes.posterImage.small}
+                              alt="Cover image"
+                              width="100%"
+                              height="100%"
+                            />
+                          )}
+                          <div className="animeTitle">
+                            {anime.data.attributes.canonicalTitle}
+                            <hr className="divider" />
+                            {anime.data.attributes.titles.ja_jp}
+                          </div>
+
+                          {/* <h4
+                            className={this.animeInformation(anime.data.id)}
+                            style={
+                              idSelectedAnime === anime.data.id
+                                ? { display: "block" }
+                                : { display: "none" }
+                            }
+                          >
+                            <b>Rating:</b> {anime.data.attributes.averageRating}
+                            <br />
+                            <b>Age:</b> {anime.data.attributes.ageRatingGuide}
+                            <br />
+                            <b>Episodes: </b>{" "}
+                            {anime.data.attributes.episodeCount}
+                          </h4> */}
+                        </div>
+
+                        {/* <div className="d-flex justify-content-center">
                           <div
                             className={
                               idSelectedAnime === anime.data.id
@@ -161,32 +189,9 @@ class Animes extends Component {
                               this.handleToggle(anime.data.id);
                             }}
                           />
-                        </div>
-                        <h4
-                          className={this.animeInformation(anime.data.id)}
-                          style={
-                            idSelectedAnime === anime.data.id
-                              ? { display: "block" }
-                              : { display: "none" }
-                          }
-                        >
-                          <b>Rating:</b> {anime.data.attributes.averageRating}
-                          <br />
-                          <b>Age:</b> {anime.data.attributes.ageRatingGuide}
-                        </h4>
+                        </div> */}
                       </Fragment>
                     )}
-                    <div className="animeBody">
-                      {anime.data.attributes.posterImage.small !==
-                        undefined && (
-                        <img
-                          src={anime.data.attributes.posterImage.small}
-                          alt="Cover image"
-                          width={"100%"}
-                          height={"100%"}
-                        />
-                      )}
-                    </div>
                   </div>
                 );
               } else {

@@ -5,14 +5,14 @@
 }
 .gridContainer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  background-color: rgb(84, 88, 90);
-  grid-gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(auto, auto);
+  grid-gap: 0.3% 1%;
   justify-content: center;
 }
 .gridItem {
-  background-color: rgb(255, 255, 255);
-  border: 2px solid rgba(0, 0, 0, 0.8);
+  /* background-color: rgb(255, 255, 255); */
+  /* border: 2px solid rgba(0, 0, 0); */
   text-align: center;
 }
 
@@ -49,13 +49,12 @@
   padding: 2rem;
 }
 .animeTitle {
-  background: rgb(0 163 224);
-  border-bottom: 2px solid black;
-  margin-bottom: 0px;
-  font-size: 0.9rem;
-  padding: 10px;
+  background: rgb(0, 139, 206);
+  font-size: 0.59rem;
   font-weight: bolder;
+  padding: 10px 5px;
   text-shadow: 2px 2px 4px #fff;
+  margin-bottom: 0px;
   color: #000;
 }
 .animeInformation {
@@ -69,12 +68,13 @@
   transition: all 700ms;
 }
 .triangleDown {
-  position: absolute;
+  bottom: 0;
   width: 0;
   height: 0;
+  border-bottom: 12px solid rgba(0, 0, 0, 0.9);
   border-left: 12px solid transparent;
   border-right: 12px solid transparent;
-  border-top: 12px solid rgba(0, 0, 0, 0.9);
+  border-top: 12px solid transparent;
   transition-duration: 0.5s;
   transition: border-left border-right border-top;
   cursor: pointer;
@@ -91,8 +91,10 @@
   cursor: pointer;
 }
 .animeBody {
-  margin-top: 0px;
+  border: 2px solid black;
+  width: auto;
 }
+
 /* .miniCircle {
   position: absolute;
   -webkit-border-radius: 8px;
@@ -104,6 +106,11 @@
   height: 8px;
   transition: width 1s ease-out 0s;
 } */
+.divider {
+  height: 1px;
+  background: #000;
+  margin: 10px 0px;
+}
 
 @-webkit-keyframes Gradient {
   0% {
@@ -145,5 +152,30 @@
     -webkit-transform: rotate(360deg);
     -o-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* For desktop: */
+  .gridContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .animeTitle {
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* For tablets: */
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 320px) {
+  /* For Phones: */
+  .gridContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .animeTitle {
+    font-size: 0.8rem;
   }
 }
