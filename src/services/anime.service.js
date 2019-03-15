@@ -9,6 +9,9 @@ async function getAnimes(id) {
       Accept: "application/vnd.api+json"
     }
   };
-  const response = await fetch(`/api/edge/anime/${id}`, requestOptions);
+  const response = await fetch(
+    `https://kitsu.io/api/edge/anime/${id}`,
+    requestOptions
+  );
   return await response.json();
 }
