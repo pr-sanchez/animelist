@@ -3,7 +3,8 @@ html {
 }
 body {
   height: 100vh;
-  background: #222 !important;
+  background: rgba(43, 41, 41, 0.9) !important;
+
   color: #fff;
   font-family: "Sniglet", cursive !important;
 }

@@ -1,6 +1,5 @@
 export const animeService = {
-  getAnimes,
-  getEpisodes
+  getAnimes
 };
 
 async function getAnimes(id) {
@@ -10,15 +9,6 @@ async function getAnimes(id) {
       Accept: "application/vnd.api+json"
     }
   };
-  const response = await fetch(
-    `https://kitsu.io/api/edge/anime/${id}`,
-    requestOptions
-  );
-  return await response.json();
-}
-async function getEpisodes(id) {
-  const response = await fetch(
-    `https://kitsu.io/api/edge/anime/${id}/episodes`
-  );
+  const response = await fetch(`/api/edge/anime/${id}`, requestOptions);
   return await response.json();
 }
